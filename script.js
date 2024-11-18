@@ -13,3 +13,17 @@
    this.classList.remove('flipped');
  });
 
+ //Script untuk Hamburger Animation//
+
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('nav ul');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+
+//Script untuk Theme Toggle//
+const themeToggle = document.getElementById("theme-toggle");
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});

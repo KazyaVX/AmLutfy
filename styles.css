@@ -18,7 +18,7 @@ body.light {
 }
 
 body.dark {
-  background: radial-gradient(circle, rgba(0, 0, 0, 1) 2%, rgba(2, 13, 55, 1) 82%, rgba(2, 13, 55, 1) 93%, rgba(255, 255, 255, 1) 100%, rgba(5, 100, 181, 1) 100%);
+  background:linear-gradient(90deg, #000, #002590);
   color: #ffffff;
 }
 
@@ -305,6 +305,14 @@ nav ul li a:hover {
   color: #e6b800;
 }
 
+body.dark header {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+body.dark nav a {
+  color: #ffffff;
+}
 body.dark .social-icons a {
   color: #ffffff;
 }
@@ -330,37 +338,51 @@ body.dark .skill-card {
   background-color: #2c2c2c;
   border: 2px solid gold;
 }
-
 @media (max-width: 768px) {
+  section, .content {
+    margin: 0 auto;
+    padding: 15px; /* Sesuaikan padding dengan layar */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
   .skills-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Set grid otomatis */
+    gap: 20px; /* Beri jarak antar elemen */
+    padding: 20px;
+    justify-items: center; /* Ratakan item secara horizontal */
+  }
 
-.card {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+  .card {
+    margin: 20px;
+    position: relative;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+  .intro {
+    margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+  }
 
-.intro {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 0;
-}
+  .logo {
+    position: absolute;
+    font-size: 20px;
+    margin-bottom: 10px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-.logo {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@media (max-width: 680px) {
   nav {
     position: fixed;
     top: 0;
@@ -388,6 +410,10 @@ body.dark .skill-card {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
+  nav ul.active {
+    display: flex;
+  }
+
   nav ul li {
     padding: 15px 0;
   }
@@ -398,33 +424,34 @@ body.dark .skill-card {
     text-decoration: none;
   }
 
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+  }
+
   .hamburger {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    z-index: 1001;
+    gap: 5px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
   }
 
   .skill-card {
+    width: 90%;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 10px;
-    font-size: 18px;
-    background-color: #fff;
-    border: 2px solid gold;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .skill-card .skill-logo {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    margin: 10px auto;
   }
 
   .skill-card p {
@@ -433,25 +460,35 @@ body.dark .skill-card {
 
   .skill-card:active p,
   .skill-card:hover p {
+    font-size: 10px;
     display: block;
     background-color: #fff;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
-}
-
-  .intro h2 {
-    font-size: 22px;
+  .intro h1 {
+  font-size: 20px;
+  text-align: center;
   }
 
   .intro p {
-    font-size: 16px;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+  }
+
+  .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
   }
 
   .button {
-    width: 100%;
+  width: 50%;
+  padding: 10px 0;
+  text-align: center;
   }
 }
-

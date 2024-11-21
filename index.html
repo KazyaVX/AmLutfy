@@ -11,55 +11,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-        <div class="hamburger">
+    <header>
+        <nav>
+          <div class="hamburger">
             <div></div>
             <div></div>
             <div></div>
           </div>
-        <ul>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Projects</a></li>
-        </ul>
-        <h1 class="logo">Lutfy.</h1>
-        <div class="social-icons">
+          <ul>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+          <h1 class="logo">Lutfy.</h1>
           <div class="social-icons">
             <a href="#"><i class="fab fa-discord"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>        
-      </div>
-    </nav>
-</header>
-
-<button id="theme-toggle">Toggle Dark Theme</button>
-    <section id="profile" class="hero">
+            <a href="https://github.com/KazyaVX" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/lutfy.io/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </nav>
+      </header>
+      
+      <button id="theme-toggle">Toggle Dark Theme</button>
+      
+      <section id="profile" class="hero">
         <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <img src="./Assets/image.png" alt="Lutfy">
-                </div>
-                <div class="card-back">
-                    <h2>M Naufal Lutfi Nabil</h2>
-                    <p>Frontend Developer</p>
-                </div>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./Assets/image.png" alt="Lutfy">
             </div>
-        </div>
+            <div class="card-back">
+              <h2>M Naufal Lutfi Nabil</h2>
+              <img src="./Assets/Screenshot 2024-11-20 202534.png" alt="Lutfy" style="border-radius: 30%;">
+              <p>Frontend Developer</p>
+              <p class="description">Let Me Introduce Myself, My Name Is Lutfy, A Frontend Developer.I Am a student Of <strong>SMK Taruna Bhakti Depok</strong></p>
+            </div>
+          </div>
         </div>
         <div class="intro">
-            <h1>My Name Is Lutfy, <span>A Frontend Developer</span></h1>
-            <p>Like a detective uncovering hidden secrets, I master technologies and frameworks, finding smart solutions to project challenges.</p>
-            <div class="buttons">
-                <a href="./cv-template.pdf" download id="downloadCV" class="button">See my CV</a>
-                <a href="#" class="button primary">Hire Me</a>
-                </div>
-            </div>
+          <h1 id="greeting"></h1>
+          <h1>My Name Is Lutfy, <span>A Frontend Developer</span></h1>
+          <p>Like a detective uncovering hidden secrets, I master technologies and frameworks, finding smart solutions to project challenges.</p>
+          <div class="buttons">
+            <a href="./cv-template.pdf" download id="downloadCV" class="button">
+              <i class="fas fa-download"></i> See my CV
+            </a>
+            <a href="#" class="button primary">Hire Me</a>
+          </div>
         </div>
-    </section>
+      </section>
 
+      
     <section id="skills" class="skills-section">
         <h2><span>My Skill</span></h2>
         <p><span>Like a detective uncovering hidden secrets, I master technologies and frameworks, finding smart solutions to project challenges</span></p>
@@ -93,6 +96,71 @@
             </div>
         </div>
     </section>
+
+    <section id="projects" class="projects-section">
+        <div class="header">
+          <h1><span>My Projects</span></h1>
+          <p>Like a detective uncovering hidden secrets, I master technologies and frameworks, finding smart solutions to project challenges</p>
+        </div>
+        <div class="projects">
+          <div class="project">
+            <img src="./Dokumen/Rectangle 14.png" alt="Project 1 image">
+            <div class="project-content">
+              <h2>Inspiratia</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+              <div class="project-icons">
+                <div class="icons">
+                  <i class="fa-brands fa-figma"></i>
+                </div>
+                <a href="https://www.figma.com/design/QQ3WQkDkvYPxPWTMH0nUgu/projek-inspiratia?node-id=0-1&t=PulISZvsI5bxCBr2-1" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+                <a href="https://www.figma.com/design/QQ3WQkDkvYPxPWTMH0nUgu/projek-inspiratia?node-id=0-1&t=PulISZvsI5bxCBr2-1" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <img src="./Dokumen/Rectangle 14-1.png" alt="Project 2 image">
+            <div class="project-content">
+              <h2>QuMenum Website</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+              <div class="project-icons">
+                <div class="icons">
+                  <a href="https://www.w3.org/html/" target="_blank"><i class="fab fa-html5"></i></a>
+                  <a href="https://www.w3.org/Style/CSS/" target="_blank"><i class="fab fa-css3-alt"></i></a>
+                  <a href="https://www.javascript.com/" target="_blank"><i class="fab fa-js"></i></a>
+                </div>
+                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <img src="./Assets/Screenshot 2024-11-20 210723.png" alt="Project 3 image">
+            <div class="project-content">
+              <h2>Cegil</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+              <div class="project-icons">
+                <div class="icons">
+                  <a href="https://www.javascript.com/" target="_blank"><i class="fab fa-js"></i></a>
+                </div>
+                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <img src="./Assets/Screenshot 2024-08-24 185911.png" alt="Project 4 image">
+            <div class="project-content">
+              <h2>weladalah</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+              <div class="project-icons">
+                <div class="icons">
+                  <!-- Using display block because the image is an inline element and it will not take full width of its parent if we don't use display block. -->
+                  <img src="./Assets/image 10.png" alt="kuro-icon" class="kuro-icon" style="display: block; width: 32px; height: 29px; filter: invert(1) contrast(1) brightness(1);">
+                </div>
+                <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     <script src="script.js"></script>
 </body>
 </html>

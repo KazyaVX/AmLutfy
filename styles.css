@@ -6,6 +6,7 @@
 }
 
 body {
+  font-family: Poppins, sans-serif;
   cursor: url("./Assets/Vector.png") 8 8, auto;
   background-color: #e6e6e6;
   color: #333;
@@ -18,7 +19,7 @@ body.light {
 }
 
 body.dark {
-  background:linear-gradient(90deg, #000, #002590);
+  background:linear-gradient(180deg, #000, #002590);
   color: #ffffff;
 }
 
@@ -114,7 +115,7 @@ nav ul li a:hover {
 }
 
 .card-front {
-  background-color: #fff;
+  background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -123,11 +124,14 @@ nav ul li a:hover {
 }
 
 .card-back {
-  background-color: #fff;
+  background-color: white;
   padding: 20px;
   transform: rotateY(180deg);
 }
 
+.card p1 {
+  font-size: small;
+}
 .intro {
   margin-top: 20px;
   text-align: left;
@@ -225,14 +229,9 @@ nav ul li a:hover {
   left: -0%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
   transform: rotate(0deg);
   transition: transform 0.8s ease;
   opacity: 0;
-}
-
-.skill-card::before {
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
 }
 
 .skill-card:hover::before {
@@ -241,39 +240,39 @@ nav ul li a:hover {
 }
 
 .skill-card[data-skill="HTML"]::after {
-  background: linear-gradient(45deg, rgba(255, 102, 0, 0.3), rgba(255, 255, 255, 0));
+  background-color: rgba(255, 102, 0, 0.3);
 }
 
 .skill-card[data-skill="CSS"]::after {
-  background: linear-gradient(45deg, rgba(0, 128, 255, 0.3), rgba(255, 255, 255, 0));
+  background-color: rgba(0, 128, 255, 0.3);
 }
 
 .skill-card[data-skill="JavaScript"]::after {
-  background: linear-gradient(45deg, rgba(247, 223, 30, 0.3), rgba(255, 255, 255, 0));
+  background-color: rgba(247, 223, 30, 0.3);
 }
 
 .skill-card[data-skill="NodeJS"]::after {
-  background: linear-gradient(45deg, rgba(88, 162, 88, 0.3), rgba(255, 255, 255, 0));
+  background-color: rgba(88, 162, 88, 0.3);
 }
 
 .skill-card[data-skill="Tailwind"]::after {
-  background: linear-gradient(45deg, rgba(56, 189, 248, 0.3), rgba(255, 255, 255, 0));
+  background-color: rgba(56, 189, 248, 0.3);
 }
 
 .skill-card[data-skill="Laravel"]::after {
-  background: linear-gradient(45deg, rgba(255, 59, 59, 0.3), rgba(255, 255, 255, 0));
+  background-color: rgba(255, 59, 59, 0.3);
 }
 
 .skill-card[data-skill="Illustrator"]::after {
-  background: linear-gradient(45deg, rgba(255, 102, 0, 0.3), rgba(255, 255, 255, 0));
+  background-color: rgba(255, 102, 0, 0.3);
 }
 
 .skill-card[data-skill="Figma"]::after {
-  background: linear-gradient(45deg, rgba(255, 69, 133, 0.3), rgba(255, 255, 255, 0));
+  background-color: rgba(255, 69, 133, 0.3);
 }
 
 .skill-card[data-skill="Photoshop"]::after {
-  background: linear-gradient(45deg, rgba(0, 114, 187, 0.3), rgba(255, 255, 255, 0));
+  background-color: rgba(0, 114, 187, 0.3);
 }
 
 .skill-card:hover::after {
@@ -305,6 +304,28 @@ nav ul li a:hover {
   color: #e6b800;
 }
 
+body.dark .card {
+  color: black;
+}
+
+body.dark .card-front{
+  color: black;
+  background-color: #000;
+  border: 2px solid #ffffff;
+}
+
+body.dark .card-front img{
+  color: black;
+  filter: invert(100%);
+}
+
+body.dark .card-back, .card-back p{
+  color: black;
+  background-color: black;
+  color: white;
+  border: 2px solid #ffffff;
+}
+
 body.dark header {
   background-color: transparent;
   backdrop-filter: blur(10px);
@@ -318,7 +339,7 @@ body.dark .social-icons a {
 }
 
 body.dark .intro h2 {
-  color: #ffffff;
+  color: #000;
 }
 
 body.dark .intro p {
@@ -326,18 +347,29 @@ body.dark .intro p {
 }
 
 body.dark .button {
-  background-color: #444;
-  color: #ffffff;
+  background-color: white;
+  color: #000;
 }
 
 body.dark .button.primary {
-  background-color: #f0e68c;
+  background-color: #00aaff;
 }
 
 body.dark .skill-card {
   background-color: #2c2c2c;
   border: 2px solid gold;
 }
+
+body.dark .project {
+  background-color: #2c2c2c;
+}
+
+body.dark .fa-icons {
+  color: #ffffff;
+}
+
+/* Tampilan Mobile*/
+
 @media (max-width: 768px) {
   section, .content {
     margin: 0 auto;
@@ -350,6 +382,30 @@ body.dark .skill-card {
     padding: 10px 0;
   }
 
+  #theme-toggle {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  body.dark #theme-toggle {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  body.dark header {
+    background-color: transparent;
+    color: #333;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
+  }
+  
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Set grid otomatis */
@@ -396,6 +452,7 @@ body.dark .skill-card {
     padding: 0 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    margin-bottom: -1px;
   }
 
   nav ul {
@@ -491,4 +548,105 @@ body.dark .skill-card {
   padding: 10px 0;
   text-align: center;
   }
+}
+
+/* Bagian Projects */
+.projects-section {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.header {
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 28px;
+  margin: 0 0 10px;
+}
+
+.header p {
+  font-size: 16px;
+  color: #555;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 100px;
+}
+
+.project {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h2 {
+  font-size: 20px;
+  margin: 0 0 12px;
+}
+
+.project-content p {
+  font-size: 15px;
+  color: #666;
+  margin: 0 0 20px;
+}
+
+.project-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-icons .icons {
+  display: flex;
+  gap: 12px;
+}
+
+.project-icons .icons i {
+  font-size: 22px;
+  color: #333;
+}
+
+.project-icons .external-link {
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.project-icons .external-link:hover {
+  color: #007bff;
+  gap: 8px;
+}
+
+body.dark .project-icons .icons i {
+  color: white;
+}
+
+body.dark .project-icons .external-link {
+  color: white;
+}
+
+body.dark .kuro-icon {
+  filter: invert(0) contrast(1) brightness(1) !important;
 }

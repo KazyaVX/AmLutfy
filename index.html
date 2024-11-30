@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lutfy</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,24 +27,29 @@
           </ul>
           <h1 class="logo">Lutfy.</h1>
           <div class="social-icons">
-            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="https://discordapp.com/users/779710075664859146"><i class="fab fa-discord"></i></a>
             <a href="https://github.com/KazyaVX" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.instagram.com/lutfy.io/" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
         </nav>
       </header>
       
-      <button id="theme-toggle">Toggle Dark Theme</button>
+      <div class="toggleCheck">
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle">
+          <span class="slider" id="gantitema"></span>
+        </label>
+      </div>
       
       <section id="profile" class="hero">
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./Assets/image.png" alt="Lutfy">
+              <img src="./Assets/image.png" alt="LutfySymbol">
             </div>
             <div class="card-back">
               <h2>M Naufal Lutfi Nabil</h2>
-              <img src="#" alt="Lutfy" style="border-radius: 30%;">
+              <img src="./Assets/lutfy gntng.png" alt="LutfyPhoto">
               <p>Frontend Developer</p>
               <p class="description">Let Me Introduce Myself, My Name Is Lutfy, A Frontend Developer.I Am a student Of <strong>SMK Taruna Bhakti Depok</strong></p>
             </div>
@@ -62,7 +68,8 @@
         </div>
       </section>
 
-      
+    <div data-aos="fade-up"
+      data-aos-duration="1000">
     <section id="skills" class="skills-section">
         <h2><span>My Skill</span></h2>
         <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis aperiam, veniam nisi consequuntur dicta accusamus, nam mollitia harum dolores cupiditate corrupti facere impedit quod? Eveniet maiores aspernatur fugiat nostrum aut!</span></p>
@@ -93,10 +100,13 @@
             </div>
             <div class="skill-card" data-skill="Photoshop">
                 <img src="./Logo For Skills/Adobe_Photoshop_CC_icon.png" alt="Photoshop" class="skill-logo"> <p>Photoshop</p>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
+    <div data-aos="fade-up"
+    data-aos-duration="1000">
     <section id="projects" class="projects-section">
         <div class="header">
           <h1><span>My Projects</span></h1>
@@ -126,7 +136,6 @@
                 <div class="icons">
                   <a href="https://www.w3.org/html/" target="_blank"><i class="fab fa-html5"></i></a>
                   <a href="https://www.w3.org/Style/CSS/" target="_blank"><i class="fab fa-css3-alt"></i></a>
-                  <a href="https://www.javascript.com/" target="_blank"><i class="fab fa-js"></i></a>
                 </div>
                 <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
               </div>
@@ -135,7 +144,7 @@
           <div class="project">
             <img src="#" alt="Project 3 image">
             <div class="project-content">
-              <h2>Tiap hari bangka dada</h2>
+              <h2>Project 3</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
               <div class="project-icons">
                 <div class="icons">
@@ -160,28 +169,93 @@
             </div>
           </div>
         </div>
+      </div>
       </section>
 
-<!--Contact Me Section
--->
+<!-- Contact Me Section -->
+<div data-aos="fade-up"
+data-aos-duration="1000">
+<div class="cardcntnt">
+  <div class="tools">
+    <div class="circle">
+      <span class="red box"></span>
+    </div>
+    <div class="circle">
+      <span class="yellow box"></span>
+    </div>
+    <div class="circle">
+      <span class="green box"></span>
+    </div>
+  </div>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you have any questions or just want to say hello, feel free to reach out using the form below.</p>
+    <form
+      id="contactForm"
+      action="https://formspree.io/f/mrbgljvp"
+      method="POST"
+    >
+      <label for="email">Your Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email address"
+        required
+      />
+      <label for="Name">Your Name/Alias:</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Enter your real Name"
+        required
+      />
+      <label for="message">Your Message:</label>
+      <textarea
+        id="message"
+        name="Pesan"
+        placeholder="Type your message here..."
+        rows="5"
+        required
+      ></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</div>
 
-      <form
-  action="https://formspree.io/f/mrbgljvp"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="Pesan"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+<footer>
+  <footer>
+    <div class="footer">
+    <div class="row">
+    <a href="https://www.facebook.com/profile.php?id=100095044269581"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/lutfy.io"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    
+    <div class="row">
+    <ul>
+    <li><a href="#">Contact us</a></li>
+    <li><a href="#">Our Services</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms & Conditions</a></li>
+    <li><a href="#">Career</a></li>
+    </ul>
+    </div>
+    
+    <div class="row">
+    Lutfy Copyright © 2024 Lutfy - All rights reserved || Edited By: Lutfy  
+    </div>
+    </div>
+    </footer>    
+</footer>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
 

@@ -8,7 +8,7 @@
 body {
   font-family: Poppins, sans-serif;
   cursor: url("./Assets/Vector.png") 8 8, auto;
-  background: linear-gradient(180deg, #fff, #00aaff);
+  background: linear-gradient(180deg, #ffffff, #fff, #00aaff);
   color: #333;
   scroll-behavior: smooth;
 }
@@ -19,7 +19,7 @@ body.light {
 }
 
 body.dark {
-  background:linear-gradient(180deg, #000, #002590);
+  background:linear-gradient(180deg, #000, #5b528d);
   color: #ffffff;
 }
 
@@ -66,6 +66,53 @@ nav ul li a:hover {
   font-weight: bold;
 }
 
+.toggleCheck {
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 50px;
+  margin-left: 208vh;
+}
+.toggle {
+  position: relative;
+  display: inline-block;
+
+  width: 60px;
+  height: 34px;
+}     
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0af;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #5b528d;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
 .logo {
   flex: 1;
   text-align: center;
@@ -88,9 +135,16 @@ nav ul li a:hover {
   perspective: 1000px;
 }
 
-.card img {
+.card-front img {
   width: 50%;
   height: 50%;
+}
+
+.card-back img {
+  width: 70%;
+  height: 50%;
+  border-radius: 50%;
+  border: 2px solid#ecf0f1;
 }
 
 .card-inner {
@@ -125,6 +179,7 @@ nav ul li a:hover {
 
 .card-back {
   background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transform: rotateY(180deg);
 }
@@ -291,7 +346,7 @@ nav ul li a:hover {
   width: 30px;
   height: 30px;
   margin-right: 10px;
-  filter: brightness(10%);
+  filter: grayscale(100%);
 }
 
 .social-icons a {
@@ -357,17 +412,48 @@ body.dark .button {
 }
 
 body.dark .button.primary {
+  color: #00aaff;
+  text-decoration: none;
+  border: 2px solid #00aaff;
+  height: 50px;
+  width: 120px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+body.dark .button.primary:hover{
+  color: #fff;
+}
+
+body.dark .button.primary::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
   background-color: #00aaff;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+body.dark .button.primary:hover::before {
+  width: 200px;
 }
 
 body.dark .skill-card {
   color: #000;
-  background-color: #2c2c2c;
+  background-color: #011522;
   border: 2px solid gold;
 }
 
 body.dark .project {
-  background-color: #2c2c2c;
+  background-color: #011522;
 }
 
 body.dark .fa-icons {
@@ -411,8 +497,6 @@ body.dark .skills-section p{
   
   body.dark nav {
     background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   }
   
   .skills-grid {
@@ -557,6 +641,20 @@ body.dark .skills-section p{
   padding: 10px 0;
   text-align: center;
   }
+
+  .project {
+    width: 50%; /* Set width to 100% */
+    min-width: 60%; /* Set minimum width o 100% */
+    margin:px auto;
+  }
+
+  .project-content p {
+    display: none;
+  }
+
+  .form-labels {
+    margin-left: 1000000px;
+  }
 }
 
 /* Bagian Projects */
@@ -579,6 +677,7 @@ body.dark .skills-section p{
 
 .header p {
   font-size: 16px;
+  display: none;
   color: #555;
 }
 
@@ -663,3 +762,165 @@ body.dark .kuro-icon {
   filter: invert(0) contrast(1) brightness(1) !important;
 }
 
+/* Bagian Contact-Me */
+/* Container Utama */
+.cardcntnt {
+  width: 100%;
+  max-width: 600px; /* Sesuaikan lebar */
+  height: auto; /* Tinggi otomatis */
+  margin: 10vh auto; /* Posisi di tengah (vertikal dan horizontal) */
+  background: linear-gradient(45deg, #ffffff, #f9f9f9, #f0f0f0, #e0e0e0);
+  border-radius: 8px;
+  position: relative; /* Parent untuk posisi absolute anak */
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 1;
+}
+
+body.dark .cardcntnt {
+  background: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+}
+/* Tools di Kiri Atas */
+.tools {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.circle {
+  padding: 0 4px;
+}
+
+.box {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
+}
+
+/* Kontak */
+form {
+  margin-top: 2rem;
+}
+
+form label {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 8px rgba(116, 185, 255, 0.8);
+  outline: none;
+}
+
+form textarea {
+  resize: none;
+}
+
+form button {
+  background: #ffffff;
+  color: #0984e3;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+  background: #dfe6e9;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Bagian Footer */
+.footer{
+  box-shadow: #011522 5px 5px 8px;
+  background: white;
+  padding:30px 0px;
+  font-family: 'Poppins', sans-serif;
+  text-align:center;
+  }
+  
+  .footer .row{
+  width:100%;
+  margin:1% 0%;
+  padding:0.6% 0%;
+  color:black;
+  font-size:0.8em;
+  }
+  
+  .footer .row a{
+  text-decoration:none;
+  color:black;
+  transition:0.5s;
+  }
+  
+  .footer .row a:hover{
+  color:gray;
+  }
+  
+  .footer .row ul{
+  width:100%;
+  }
+  
+  .footer .row ul li{
+  display:inline-block;
+  margin:0px 30px;
+  }
+  
+  .footer .row a i{
+  font-size:2em;
+  margin:0% 1%;
+  }
+  
+  @media (max-width:720px){
+  .footer{
+  text-align:left;
+  padding:5%;
+  }
+  .footer .row ul li{
+  display:block;
+  margin:10px 0px;
+  text-align:left;
+  }
+  .footer .row a i{
+  margin:0% 3%;
+  }
+  }

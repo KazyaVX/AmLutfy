@@ -23,7 +23,7 @@ hamburger.addEventListener('click', () => {
 });
 
 //Script untuk Theme Toggle//
-const themeToggle = document.getElementById("theme-toggle");
+const themeToggle = document.getElementById("gantitema");
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });

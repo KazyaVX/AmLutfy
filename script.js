@@ -15,7 +15,7 @@
 
  //Script untuk Hamburger Animation//
 
-const hamburger = document.querySelector('.hamburger');
+const hamburger = document.querySelector('.hamburgerlabel input');
 const navMenu = document.querySelector('nav ul');
 
 hamburger.addEventListener('click', () => {
@@ -51,3 +51,32 @@ themeToggle.addEventListener("click", () => {
 
     // Panggil fungsi untuk menampilkan salam
     displayGreeting();
+
+    //Menhapus //
+    document.getElementById("contactForm").onsubmit = function(event) {
+      event.preventDefault(); // Mencegah pengiriman form secara default
+
+      // Mengambil data form
+      const formData = new FormData(this);
+      
+      // Mengirim data ke Formspree
+      fetch("https://formspree.io/f/mrbgljvp", {
+          method: "POST",
+          body: formData,
+          headers: {
+              'Accept': 'application/json'
+          }
+      })
+      .then(response => {
+          if (response.ok) {
+              alert("Pesan berhasil dikirim!");
+              this.reset(); // Mereset form setelah pengiriman berhasil
+          } else {
+              alert("Terjadi kesalahan. Coba lagi.");
+          }
+      })
+      .catch(error => {
+          alert("Terjadi kesalahan. Coba lagi.");
+          console.error("Error:", error);
+      });
+  };

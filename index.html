@@ -15,9 +15,13 @@
     <header>
         <nav>
           <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
+            <label class="hamburgerlabel">
+              <input type="checkbox">
+              <svg viewBox="0 0 32 32">
+                <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                <path class="line" d="M7 16 27 16"></path>
+              </svg>
+            </label>
           </div>
           <ul>
             <li><a href="#profile">Profile</a></li>
@@ -83,14 +87,8 @@
             <div class="skill-card" data-skill="JavaScript">
                 <imG src="./Logo For Skills/Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript logo" class="skill-logo"> <p>JavaScript</p>
             </div>
-            <div class="skill-card" data-skill="NodeJS">
-                <img src="./Logo For Skills/node-js-icon-1817x2048-g8tzf91e.png" alt="NodeJS logo" class="skill-logo"> <p>NodeJS</p>
-            </div>
             <div class="skill-card" data-skill="Tailwind">
                 <img src="./Logo For Skills/Tailwind_CSS_Logo.svg.png" alt="Tailwind logo" class="skill-logo"> <p>Tailwind</p>
-            </div>
-            <div class="skill-card" data-skill="Laravel">
-                <img src="./Logo For Skills/Laravel.svg.png" alt="Laravel logo" class="skill-logo"> <p>Laravel</p>
             </div>
             <div class="skill-card" data-skill="Illustrator">
                 <img src="./Logo For Skills/1051px-Adobe_Illustrator_CC_icon.png" alt="Illustrator Logo" class="skill-logo"> <p>Illustrator</p>
@@ -194,6 +192,7 @@ data-aos-duration="1000">
       id="contactForm"
       action="https://formspree.io/f/mrbgljvp"
       method="POST"
+      onsubmit="resetForm()"
     >
       <label for="email">Your Email:</label>
       <input
@@ -205,9 +204,9 @@ data-aos-duration="1000">
       />
       <label for="Name">Your Name/Alias:</label>
       <input
-        type="text"
-        id="email"
-        name="email"
+        type="name"
+        id="name"
+        name="Nama Pengirim"
         placeholder="Enter your real Name"
         required
       />
@@ -219,9 +218,10 @@ data-aos-duration="1000">
         rows="5"
         required
       ></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit" id="submit">Send Your Messages</button>
     </form>
   </section>
+</div>
 </div>
 
 <footer>
@@ -236,8 +236,7 @@ data-aos-duration="1000">
     
     <div class="row">
     <ul>
-    <li><a href="#">Contact us</a></li>
-    <li><a href="#">Our Services</a></li>
+    <li><a href="#">Contact Me</a></li>
     <li><a href="#">Privacy Policy</a></li>
     <li><a href="#">Terms & Conditions</a></li>
     <li><a href="#">Career</a></li>

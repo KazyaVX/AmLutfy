@@ -14,8 +14,6 @@ body {
   scroll-behavior: smooth;
 }
 
-
-
 body.light {
   background-color: #e6e6e6;
   color: #333;
@@ -82,6 +80,7 @@ nav ul li a:hover {
   width: 0;
   height: 0;
 }
+
 .slider {
   position: absolute;
   cursor: pointer;
@@ -104,6 +103,7 @@ nav ul li a:hover {
   transition: 0.4s;
   border-radius: 50%;
 }
+
 input:checked + .slider {
   background-color: #5b528d;
 }
@@ -202,7 +202,7 @@ input:checked + .slider:before {
 }
 
 .intro span {
-  color: #7f11da;
+  color: #00aaff;
 }
 
 .buttons {
@@ -210,7 +210,7 @@ input:checked + .slider:before {
   gap: 10px;
 }
 
-.button {
+.button-cv {
   padding: 10px 20px;
   border-radius: 10px;
   text-decoration: none;
@@ -221,17 +221,53 @@ input:checked + .slider:before {
   text-align: center;
 }
 
-.button.primary {
-  background-color: #e6b800;
-  color: #fff;
-  height: 50px;
-  width: 120px;
-  line-height: 1.8;
-  text-align: center;
+.button-cv:hover {
+  background-color: #1d1c1c;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.button-hire{
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #e6b800;
+    text-decoration: none;
+    border: 2px solid #e6b800;
+    height: 50px;
+    width: 120px;
+    cursor: pointer;
+    font-weight: bold;
+    background: transparent;
+    line-height: 1.8;
+    text-align: center;
+    position: relative;
+    transition: all 0.5s;
+    overflow: hidden;
+  }
+  
+.button-hire:hover{
+    color: #fff;
+  }
+  
+.button-hire::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: -40px;
+    transform: skewX(45deg);
+    background-color: #00aaff;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+
+  .button-hire:hover::before {
+    width: 200px;
+  }
+  
 
 /* Skills Section / Bagian Skill */
-
-}
 .skills-section {
   width: 80%;
   margin: 0 auto;
@@ -469,7 +505,7 @@ body.dark .kuro-icon {
   margin: 10vh auto; /* Posisi di tengah (vertikal dan horizontal) */
   background: linear-gradient(45deg, #ffffff, #f9f9f9, #f0f0f0, #e0e0e0);
   border-radius: 8px;
-  position: relative; /* Parent untuk posisi absolute anak */
+  position: relative; /* Parent untuk posisi absolute  */
   padding: 2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -477,7 +513,17 @@ body.dark .kuro-icon {
 }
 
 body.dark .cardcntnt {
-  background: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  background: #011522;
+  color : white;
+}
+
+body.dark .cardcntnt label {
+  color: white;
+}
+
+body.dark form button {
+  background-color: #000;
+  color: cyan
 }
 /* Buletan Gimik Contact */
 .tools {
@@ -534,7 +580,7 @@ form textarea {
   border: none;
   border-radius: 10px;
   font-size: 1rem;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(190, 184, 184, 0.2);
   color: black  ;
   backdrop-filter: blur(5px);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -627,7 +673,7 @@ form button:hover {
   /* Mode, Tema Gelap / Dark Mode */
   
 body.dark {
-  background:linear-gradient(180deg, #000, #5b528d);
+  background: linear-gradient(135deg, #0A0D1A, #1E2638, #3A4A5F);
   color: #ffffff;
 }
 
@@ -682,7 +728,7 @@ body.dark .button {
   color: #000;
 }
 
-body.dark .button.primary {
+body.dark .button-hire{
   color: #00aaff;
   text-decoration: none;
   border: 2px solid #00aaff;
@@ -696,11 +742,11 @@ body.dark .button.primary {
   overflow: hidden;
 }
 
-body.dark .button.primary:hover{
+body.dark .button-hire:hover{
   color: #fff;
 }
 
-body.dark .button.primary::before {
+body.dark .button-hire::before {
   content: "";
   position: absolute;
   height: 100%;
@@ -713,7 +759,7 @@ body.dark .button.primary::before {
   transition: all 0.5s;
 }
 
-body.dark .button.primary:hover::before {
+body.dark .button-hire:hover::before {
   width: 200px;
 }
 
@@ -751,10 +797,11 @@ body.dark .footer .row a{
 /* Tampilkan toggle di layar mobile */
 @media (max-width: 767px) {
   .toggleCheck {
-      display: block; /* Menampilkan toggle di mobile */
+      display: flex; /* Menampilkan toggle di mobile */
       position: absolute; /* Posisi bisa diatur sesuai kebutuhan */
       top: 10px; /* Atur posisi atas */
       right: 8px; /* Atur posisi kanan */
+      z-index: 9999;
 
       
   }
@@ -992,16 +1039,19 @@ body.dark nav ul li a {
   }
 
   .project {
-    width: 80%; /* Set width to 100% */
-    height: 100%;
-    justify-content: center;
+    width: 60%;
+    height: auto; /* Use auto to allow the height to adjust based on content */
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+    /* Optional: Add some padding or margin for better spacing */
+    padding: 20px; /* Adjust as needed */
+    box-sizing: border-box; /* Ensures padding is included in the width/height */
+}
 
   .project-content p {
     font-size: medium;
+    margin: 5px;
   }
 
   /* Bagian Contact untuk tampilan mobile*/

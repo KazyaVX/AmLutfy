@@ -1,4 +1,4 @@
- // Script untuk membalik kartu saat di-klik
+ // Script untuk membalik kartu saat di-klik 
  const cardInner = document.querySelector('.card-inner');
  cardInner.addEventListener('click', function() {
    this.classList.toggle('flipped');
@@ -40,43 +40,39 @@ themeToggle.addEventListener("click", () => {
       var currentHour = getCurrentTime();
       var greetingElement = document.getElementById("greeting");
 
-      if (currentHour >= 5 && currentHour < 12) {
-        greetingElement.textContent = "Selamat Pagi!";
-      } else if (currentHour >= 12 && currentHour < 18) {
-        greetingElement.textContent = "Selamat Siang!";
+      if (currentHour >= 5 && currentHour < 14) {
+        greetingElement.textContent = "Good Morning!";
+      } else if (currentHour >= 14 && currentHour < 18) {
+        greetingElement.textContent = "Good Afternoon!";
       } else {
-        greetingElement.textContent = "Selamat Malam!";
+        greetingElement.textContent = "Good Evening!";
       }
     }
 
     // Panggil fungsi untuk menampilkan salam
     displayGreeting();
 
-    //Menhapus //
-    document.getElementById("contactForm").onsubmit = function(event) {
-      event.preventDefault(); // Mencegah pengiriman form secara default
+  // Mengaktifkan tooltips
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 
-      // Mengambil data form
-      const formData = new FormData(this);
-      
-      // Mengirim data ke Formspree
-      fetch("https://formspree.io/f/mrbgljvp", {
-          method: "POST",
-          body: formData,
-          headers: {
-              'Accept': 'application/json'
-          }
-      })
-      .then(response => {
-          if (response.ok) {
-              alert("Pesan berhasil dikirim!");
-              this.reset(); // Mereset form setelah pengiriman berhasil
-          } else {
-              alert("Terjadi kesalahan. Coba lagi.");
-          }
-      })
-      .catch(error => {
-          alert("Terjadi kesalahan. Coba lagi.");
-          console.error("Error:", error);
-      });
-  };
+  /*Behavior smooth */
+  const links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Mencegah default behavior
+                const targetId = this.getAttribute('href'); // Ambil ID target
+                const targetElement = document.querySelector(targetId); // Cari elemen target
+
+                // Hitung posisi scroll dengan offset
+                const headerOffset = 60; // Tinggi navbar
+                const elementPosition = targetElement.getBoundingClientRect().top; // Posisi elemen
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                // Scroll ke elemen target dengan offset
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth' // Mengatur scroll menjadi halus
+                });
+            });
+        });

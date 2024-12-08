@@ -64,10 +64,10 @@
           <h1>My Name Is Lutfy, <span>A Frontend Developer</span></h1>
           <p>Like a detective uncovering hidden secrets, I master technologies and frameworks, finding smart solutions to project challenges.</p>
           <div class="buttons">
-            <a donwload href="./cv-template.pdf" download id="downloadCV" class="button">
-              <i class="fas fa-download"></i> See my CV
+            <a donwload href="./TemplateCV.pdf" download id="downloadCV" class="button-cv">
+              <i class="fas fa-download"></i> Download CV
             </a>
-            <a href="#" class="button primary">Hire Me</a>
+            <a href="#" class="button-hire">Hire Me</a>
           </div>
         </div>
       </section>
@@ -132,8 +132,8 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
               <div class="project-icons">
                 <div class="icons">
-                  <a href="https://www.w3.org/html/" target="_blank"><i class="fab fa-html5"></i></a>
-                  <a href="https://www.w3.org/Style/CSS/" target="_blank"><i class="fab fa-css3-alt"></i></a>
+                  <a target="_blank"><i class="fab fa-html5"></i></a>
+                  <a target="_blank"><i class="fab fa-css3-alt"></i></a>
                 </div>
                 <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
               </div>
@@ -146,7 +146,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
               <div class="project-icons">
                 <div class="icons">
-                  <a href="https://www.javascript.com/" target="_blank"><i class="fab fa-js"></i></a>
+                  <a  target="_blank"><i class="fab fa-js"></i></a>
                 </div>
                 <a href="#" class="external-link"><i class="fas fa-external-link-alt"></i></a>
               </div>
@@ -155,7 +155,7 @@
           <div class="project">
             <img src="#" alt="Project 4 image">
             <div class="project-content">
-              <h2>Project Nguwawor</h2>
+              <h2>Project 4</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
               <div class="project-icons">
                 <div class="icons">
@@ -192,34 +192,15 @@ data-aos-duration="1000">
       id="contactForm"
       action="https://formspree.io/f/mrbgljvp"
       method="POST"
-      onsubmit="resetForm()"
     >
       <label for="email">Your Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Enter your email address"
-        required
-      />
+      <input type="email" id="email" name="email" placeholder="Enter your email address" autocomplete="off" required />
       <label for="Name">Your Name/Alias:</label>
-      <input
-        type="name"
-        id="name"
-        name="Nama Pengirim"
-        placeholder="Enter your real Name"
-        required
-      />
+      <input type="name" id="name" name="Nama Pengirim" placeholder="Enter your real Name" autocomplete="off" required />
       <label for="message">Your Message:</label>
-      <textarea
-        id="message"
-        name="Pesan"
-        placeholder="Type your message here..."
-        rows="5"
-        required
-      ></textarea>
+      <textarea id="message" name="Pesan" placeholder="Type your message here..." rows="5" autocomplete="off" required></textarea>
       <button type="submit" id="submit">Send Your Messages</button>
-    </form>
+  </form>
   </section>
 </div>
 </div>

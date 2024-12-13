@@ -51,28 +51,3 @@ themeToggle.addEventListener("click", () => {
 
     // Panggil fungsi untuk menampilkan salam
     displayGreeting();
-
-  // Mengaktifkan tooltips
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-
-  /*Behavior smooth */
-  const links = document.querySelectorAll('a[href^="#"]');
-
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); // Mencegah default behavior
-                const targetId = this.getAttribute('href'); // Ambil ID target
-                const targetElement = document.querySelector(targetId); // Cari elemen target
-
-                // Hitung posisi scroll dengan offset
-                const headerOffset = 60; // Tinggi navbar
-                const elementPosition = targetElement.getBoundingClientRect().top; // Posisi elemen
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                // Scroll ke elemen target dengan offset
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth' // Mengatur scroll menjadi halus
-                });
-            });
-        });

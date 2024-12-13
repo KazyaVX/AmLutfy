@@ -8,7 +8,7 @@
 
 body {
   font-family: Poppins, sans-serif;
-  cursor: url("./Assets/Vector.png") 8 8, auto;
+  cursor: url("./Assets/Vector.png") , auto;
   background: linear-gradient(180deg, #ffffff, #fff, #00aaff);
   color: #333;
   scroll-behavior: smooth;
@@ -257,7 +257,7 @@ input:checked + .slider:before {
     top: 0;
     left: -40px;
     transform: skewX(45deg);
-    background-color: #00aaff;
+    background-color: #e6b800;
     z-index: -1;
     transition: all 0.5s;
   }
@@ -345,11 +345,6 @@ input:checked + .slider:before {
 .skill-card[data-skill="JavaScript"]::after {
   background-color: rgba(247, 223, 30, 0.3);
 }
-
-.skill-card[data-skill="Tailwind"]::after {
-  background-color: rgba(56, 189, 248, 0.3);
-}
-
 .skill-card[data-skill="Illustrator"]::after {
   background-color: rgba(255, 102, 0, 0.3);
 }
@@ -411,7 +406,6 @@ input:checked + .slider:before {
 
 .header p {
   font-size: 16px;
-  display: none;
   color: #555;
 }
 
@@ -492,9 +486,6 @@ body.dark .project-icons .external-link {
   color: white;
 }
 
-body.dark .kuro-icon {
-  filter: invert(0) contrast(1) brightness(1) !important;
-}
 
 /* Bagian Contact-Me */
 /* Container Utama */
@@ -703,6 +694,10 @@ body.dark .card-back p {
   color: #ffffff;
 }
 
+body.dark .card-back h2 {
+  color: #ffffff;
+}
+
 body.dark header {
   background-color: transparent;
   backdrop-filter: blur(10px);
@@ -848,6 +843,11 @@ body.dark .footer .row a{
 
   body.dark nav {
     background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  body.dark header {
+    background-color: transparent;
+    backdrop-filter: none;
   }
   
   .skills-grid {
